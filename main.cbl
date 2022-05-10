@@ -14,16 +14,14 @@
        PROCEDURE DIVISION.
            PERFORM GET-BUZZ MAX-BUZZ TIMES.
 
-           GET-BUZZ.                            
+           GET-BUZZ.     
+               DISPLAY INCREMENT                       
                IF FUNCTION MOD (INCREMENT, FIZZ-BUZZ) = 0  
-                   DISPLAY INCREMENT
                    DISPLAY "FizzBuzz"   
                ELSE IF FUNCTION MOD (INCREMENT, FIZZ) = 0  
-                   DISPLAY INCREMENT
                    DISPLAY "Fizz" 
                ELSE IF FUNCTION MOD (INCREMENT, BUZZ) = 0  
-                   DISPLAY INCREMENT
-                   DISPLAY "Buzz"                                  
+                   DISPLAY "Buzz"                          
                END-IF.
                COMPUTE INCREMENT = INCREMENT + 1.
                                                                  
