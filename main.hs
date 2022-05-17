@@ -1,15 +1,11 @@
 import System.Environment
 
 createFizz :: Int -> String
-createFizz x =  
-        if x `mod` 15 == 0 then
-            "FizzBuzz"
-        else if x `mod` 3 == 0 then
-            "Fizz"
-        else if x `mod` 5 == 0 then
-            "Buzz"
-        else
-            show x
+createFizz x
+    | (x `mod` 15 == 0) = "FizzBuzz"
+    | (x `mod` 3 == 0) = "Fizz"
+    | (x `mod` 5 == 0) = "Buzz"
+    | otherwise = show xx
 
 outputFizz :: [String] -> IO()
 outputFizz (x:[]) = putStrLn x 
