@@ -15,13 +15,15 @@
            PERFORM GET-BUZZ MAX-BUZZ TIMES.
 
            GET-BUZZ.     
-               DISPLAY INCREMENT                       
+                                      
                IF FUNCTION MOD (INCREMENT, FIZZ-BUZZ) = 0  
                    DISPLAY "FizzBuzz"   
                ELSE IF FUNCTION MOD (INCREMENT, FIZZ) = 0  
                    DISPLAY "Fizz" 
                ELSE IF FUNCTION MOD (INCREMENT, BUZZ) = 0  
-                   DISPLAY "Buzz"                          
+                   DISPLAY "Buzz"  
+               ELSE
+                   DISPLAY INCREMENT                       
                END-IF.
                COMPUTE INCREMENT = INCREMENT + 1.
                                                                  
