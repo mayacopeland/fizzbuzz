@@ -5,17 +5,13 @@ createFizz x
     | (x `mod` 15 == 0) = "FizzBuzz"
     | (x `mod` 3 == 0) = "Fizz"
     | (x `mod` 5 == 0) = "Buzz"
-    | otherwise = show xx
+    | otherwise = show x
 
 outputFizz :: [String] -> IO()
 outputFizz (x:[]) = putStrLn x 
-outputFizz (x:xs) = do 
-    putStrLn x 
-    outputFizz xs
+outputFizz (x:xs) = putStrLn x >> outputFizz xs
 
 main :: IO()
 main = do
     args <- getArgs
-    let numbers = [1..(read $ head args)]
-    let xs = map createFizz numbers
-    outputFizz xs
+    outputFizz $ map createFizz [1..(read $ head args)]
